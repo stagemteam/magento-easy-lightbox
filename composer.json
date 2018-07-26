@@ -12,34 +12,21 @@
   "extra": {
     "map": [
       ["app/code/community/TM/CatalogConfigurableSwatches/", "app/code/community/TM/CatalogConfigurableSwatches/"],
-      ["app/code/community/TM/Core/", "app/code/community/TM/Core/"],
-      ["app/code/community/TM/EasyLightbox/", "app/code/community/TM/EasyLightbox/"],
 
-      ["app/etc/modules/TM_Core.xml", "app/etc/modules/TM_Core.xml"],
-      ["app/etc/modules/TM_CatalogConfigurableSwatches.xml", "app/etc/modules/TM_CatalogConfigurableSwatches.xml"],
       ["app/etc/modules/TM_EasyLightbox.xml", "app/etc/modules/TM_EasyLightbox.xml"],
 
-      ["app/locale/en_US/TM_Core.csv", "app/locale/en_US/TM_Core.csv"],
       ["app/locale/en_US/TM_EasyLightbox.csv", "app/locale/en_US/TM_EasyLightbox.csv"],
 
 
       ["app/design/adminhtml/default/default/layout/tm/easylightbox.xml", "app/design/adminhtml/default/default/layout/tm/app/design/adminhtml/default/default/layout/tm/easylightbox.xml"],
-      ["app/design/adminhtml/default/default/layout/tmcore.xml", "app/design/adminhtml/default/default/layout/tmcore.xml"],
       ["app/design/adminhtml/default/default/template/tm/easylightbox/", "app/design/adminhtml/default/default/template/tm/easylightbox/"],
-      ["app/design/adminhtml/default/default/template/tmcore/", "app/design/adminhtml/default/default/template/tmcore/"],
 
-      ["app/design/frontend/base/default/layout/tm/configurableswatches.xml", "app/design/frontend/base/default/layout/tm/configurableswatches.xml"],
-      ["app/design/frontend/base/default/layout/tm/core.xml", "app/design/frontend/base/default/layout/tm/core.xml"],
       ["app/design/frontend/base/default/layout/tm/easylightbox.xml", "app/design/frontend/base/default/layout/tm/easylightbox.xml"],
 
-      ["app/design/frontend/base/default/template/tm/configurableswatches/", "app/design/frontend/base/default/template/tm/configurableswatches/"],
       ["app/design/frontend/base/default/template/tm/easylightbox/", "app/design/frontend/base/default/template/tm/easylightbox/"],
-      ["app/design/frontend/base/default/template/tm/easytabs/", "app/design/frontend/base/default/template/tm/easytabs/"],
 
       ["skin/adminhtml/default/default/images/widget/easylightbox__image.gif", "skin/adminhtml/default/default/images/widget/easylightbox__image.gif"],
-      ["skin/frontend/base/default/tm/configurableswatches/", "skin/frontend/base/default/tm/configurableswatches/"],
 
-      ["js/tm/adminhtml/core/window.js", "js/tm/adminhtml/core/window.js"],
       ["js/tm/easylightbox/", "js/tm/easylightbox/"],
       ["js/tm/lib/event.simulate.js", "js/tm/lib/event.simulate.js"],
       ["js/tm/lib/chosen/chosen.css", "js/tm/lib/chosen/chosen.css"],
