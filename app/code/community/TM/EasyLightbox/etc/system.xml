@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <templates_master>
+            <label>Templates-master</label>
+            <sort_order>196</sort_order>
+        </templates_master>
+    </tabs>
+    <sections>
+        <tm_easylightbox translate="label" module="easylightbox">
+            <label>Easy Lightbox</label>
+            <tab>templates_master</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>525</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <general translate="label">
+                    <label>General</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enabled>
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enabled>
+                        <jquery translate="label comment">
+                            <label>Add jQuery library</label>
+                            <comment><![CDATA[<span style="color: #f00">Required, if your theme does not include jQuery by default</span>]]></comment>
+                            <frontend_type>label</frontend_type>
+                            <sort_order>11</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </jquery>
+                        <keep_magento_zoom>
+                            <label>Keep Magento zoom on main product image</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </keep_magento_zoom>
+
+                        <image_size_heading>
+                            <label>Image size</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>28</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </image_size_heading>
+                        <lightbox_image_size translate="label comment">
+                            <label>Lightbox</label>
+                            <comment>Leave empty to use original picture in lightbox popup</comment>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>easylightbox/adminhtml_system_config_form_field_imageSize</frontend_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </lightbox_image_size>
+                        <main_image_size translate="label comment">
+                            <label>Main image</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>easylightbox/adminhtml_system_config_form_field_imageSize</frontend_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </main_image_size>
+                        <thumbnail_image_size translate="label comment">
+                            <label>Thumbnail</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>easylightbox/adminhtml_system_config_form_field_imageSize</frontend_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </thumbnail_image_size>
+
+                        <lightbox_settings_heading>
+                            <label>Lightbox settings</label>
+                            <frontend_model>adminhtml/system_config_form_field_heading</frontend_model>
+                            <sort_order>58</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </lightbox_settings_heading>
+                        <use_product_name_for_title>
+                            <label>Show product name in lightbox title, if image title is empty</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </use_product_name_for_title>
+                        <resizeDuration>
+                            <label>Lightbox resize duration, ms</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </resizeDuration>
+                        <fadeDuration>
+                            <label>Overlay fade duration, ms</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>91</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </fadeDuration>
+                        <wrapAround>
+                            <label>Show first image after the last one</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </wrapAround>
+                        <albumLabel translate="label comment">
+                            <label>Album label</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>110</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </albumLabel>
+                    </fields>
+                </general>
+            </groups>
+        </tm_easylightbox>
+    </sections>
+</config>

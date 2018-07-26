@@ -1,0 +1,16 @@
+<?php
+$helper = Mage::helper('easylightbox/image');
+$image  = $helper->init($this->getPath());
+$width  = $this->getWidth();
+if (is_numeric($width)) {
+    $image->resize($width, $this->getHeight());
+}
+?>
+
+<a href="<?php echo $image ?>"
+    data-lightbox="lightbox_cms_<?php echo $this->getGroup() ?>"
+    title="<?php echo $this->getTitle() ?>"
+    onclick="return false;"
+><img src="<?php echo $helper->init($this->getPath())->resize($this->getThumbnailWidth(), $this->getThumbnailHeight()) ?>"
+        alt="<?php echo $this->getTitle() ?>"
+    /></a>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <tm_easylightbox>
+                                        <title>EasyLightbox</title>
+                                        <sort_order>53</sort_order>
+                                    </tm_easylightbox>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                    <templates_master>
+                        <title>Templates Master</title>
+                        <sort_order>71</sort_order>
+                        <children>
+                            <easylightbox>
+                                <title>EasyLightbox</title>
+                                <sort_order>15</sort_order>
+                                <children>
+                                    <image translate="title" module="easylightbox">
+                                        <title>Upload Image</title>
+                                        <sort_order>10</sort_order>
+                                    </image>
+                                </children>
+                            </easylightbox>
+                        </children>
+                    </templates_master>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

@@ -1,0 +1,59 @@
+<?php
+    $_product = $this->getProduct();
+    $_helper  = $this->helper('catalog/output');
+    $useProductNameForTitle = Mage::getStoreConfig('tm_easylightbox/general/use_product_name_for_title');
+    $mainImageSize = explode(',', Mage::getStoreConfig('tm_easylightbox/general/main_image_size'), 2);
+    $lightboxSize  = explode(',', Mage::getStoreConfig('tm_easylightbox/general/lightbox_image_size'), 2);
+    $thumbnailSize = explode(',', Mage::getStoreConfig('tm_easylightbox/general/thumbnail_image_size'), 2);
+
+    $image = $this->helper('catalog/image')->init($_product, 'image');
+    if (is_numeric($lightboxSize[0])) {
+        $image = $this->helper('catalog/image')->init($_product, 'image')->resize($lightboxSize[0], $lightboxSize[1]);
+    }
+
+    $mainTitle = $this->htmlEscape($_product->getImageLabel());
+    if ($useProductNameForTitle && empty($mainTitle)) :
+        $mainTitle = $_product->getName();
+    endif;
+?>
+
+<a href="<?php echo $image; ?>"
+    data-lightbox="rotation"
+    title="<?php echo $mainTitle ;?>"
+    onclick="return false;"
+    class="main-image"
+><img src="<?php echo $this->helper('catalog/image')->init($_product, 'image')->resize($mainImageSize[0], $mainImageSize[1]); ?>" alt="<?php echo $this->htmlEscape($_product->getImageLabel());?>"
+/></a>
+
+<?php if (count($this->getGalleryImages()) > 0) : ?>
+    <div class="more-views">
+        <h4><?php echo $this->__('More Views') ?></h4>
+        <ul class="product-image-thumbs">
+        <?php foreach ($this->getGalleryImages() as $_image): ?>
+            <?php
+            $subtitle = $this->htmlEscape($_image->getLabel());
+            if ($useProductNameForTitle && empty($subtitle)) :
+                $subtitle = $_product->getName();
+            endif;
+
+            if (is_numeric($lightboxSize[0])) :
+                $popupImage = $this->helper('catalog/image')->init($_product, 'image', $_image->getFile())->resize($lightboxSize[0], $lightboxSize[1]);
+            else:
+                $popupImage = $this->helper('catalog/image')->init($this->getProduct(), 'image', $_image->getFile());
+            endif;
+            ?>
+            <li>
+                <a href="<?php echo $popupImage ?>"
+                    data-lightbox="rotation"
+                    title="<?php echo $subtitle; ?>"
+                    onclick="return false;"
+                ><img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize($thumbnailSize[0], $thumbnailSize[1]); ?>"
+                    alt="<?php echo $subtitle; ?>"
+                /></a>
+            </li>
+        <?php endforeach; ?>
+        </ul>
+    </div>
+<?php endif; ?>
+
+<?php echo $this->getChildHtml('after'); ?>

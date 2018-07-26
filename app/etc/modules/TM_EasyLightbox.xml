@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <TM_EasyLightbox>
+            <active>true</active>
+            <codePool>community</codePool>
+            <tm_link><![CDATA[http://templates-master.com/magento-easy-lightbox.html]]></tm_link>
+            <depends>
+                <Mage_Catalog />
+                <Mage_Cms />
+            </depends>
+        </TM_EasyLightbox>
+    </modules>
+</config>

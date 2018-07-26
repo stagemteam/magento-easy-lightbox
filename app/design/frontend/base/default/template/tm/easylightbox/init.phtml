@@ -1,0 +1,16 @@
+<script type="text/javascript">
+function initLightbox() {
+    lightbox.option({
+        fadeDuration  : <?php echo (int)Mage::getStoreConfig('tm_easylightbox/general/fadeDuration') ?>,
+        resizeDuration: <?php echo (int)Mage::getStoreConfig('tm_easylightbox/general/resizeDuration') ?>,
+        wrapAround    : <?php echo (int)Mage::getStoreConfig('tm_easylightbox/general/wrapAround') ?>,
+        fitImagesInViewport : <?php echo (int)Mage::getStoreConfig('tm_easylightbox/general/fitImagesInViewport') ?>,
+        showImageNumberLabel: <?php echo (int)Mage::getStoreConfig('tm_easylightbox/general/showImageNumberLabel') ?>,
+        albumLabel: "<?php echo Mage::getStoreConfig('tm_easylightbox/general/albumLabel') ?>"
+    });
+}
+
+document.observe("dom:loaded", function() {
+    initLightbox();
+});
+</script>

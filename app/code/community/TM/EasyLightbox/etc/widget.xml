@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widgets>
+    <easylightbox_image type="easylightbox/image" translate="label" module="easylightbox">
+        <name>EasyLightbox Image</name>
+        <parameters>
+            <template>
+                <label>Display mode</label>
+                <visible>1</visible>
+                <type>select</type>
+                <values>
+                    <image>
+                        <value>tm/easylightbox/widget/image.phtml</value>
+                        <label>Image</label>
+                    </image>
+                    <link>
+                        <value>tm/easylightbox/widget/link.phtml</value>
+                        <label>Link</label>
+                    </link>
+                </values>
+            </template>
+            <file_input>
+                <label>Image</label>
+                <type>easylightbox/adminhtml_widget_image</type>
+                <required>1</required>
+                <visible>1</visible>
+            </file_input>
+            <path>
+                <type>text</type>
+                <required>1</required>
+                <visible>0</visible>
+            </path>
+            <title>
+                <label>Title</label>
+                <type>text</type>
+                <visible>1</visible>
+                <required>1</required>
+            </title>
+            <group>
+                <label>Lightbox group</label>
+                <type>text</type>
+                <visible>1</visible>
+            </group>
+            <thumbnail_width>
+                <label>Image preview width, px</label>
+                <type>text</type>
+                <visible>1</visible>
+                <depends>
+                    <template>
+                        <value>tm/easylightbox/widget/image.phtml</value>
+                    </template>
+                </depends>
+            </thumbnail_width>
+            <thumbnail_height>
+                <label>Image preview height, px</label>
+                <type>text</type>
+                <visible>1</visible>
+                <depends>
+                    <template>
+                        <value>tm/easylightbox/widget/image.phtml</value>
+                    </template>
+                </depends>
+            </thumbnail_height>
+            <width>
+                <label>Lightbox Width, px</label>
+                <type>text</type>
+                <visible>1</visible>
+            </width>
+            <height>
+                <label>Lightbox Height, px</label>
+                <type>text</type>
+                <visible>1</visible>
+            </height>
+        </parameters>
+    </easylightbox_image>
+</widgets>

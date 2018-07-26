@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<layout version="0.1.0">
+    <default>
+        <reference name="head">
+            <action method="addItem" ifconfig="tm_easylightbox/general/enabled"><type>js_css</type><name>tm/easylightbox/lightbox/css/lightbox.css</name></action>
+            <action method="addItem" ifconfig="tm_easylightbox/general/enabled"><type>js</type><name>tm/easylightbox/lightbox/js/lightbox.js</name></action>
+            <action method="addItem" ifconfig="tm_easylightbox/general/enabled"><type>js</type><name>tm/easylightbox/easylightbox.js</name></action>
+        </reference>
+        <reference name="before_body_end">
+            <block type="core/template" name="easylightbox.script">
+                <action method="setTemplate" ifconfig="tm_easylightbox/general/enabled"><template>tm/easylightbox/init.phtml</template></action>
+            </block>
+        </reference>
+    </default>
+
+    <!-- @see TM_EasyLightbox_Model_Observer::applyLayoutHadles -->
+    <easylightbox_replace_image>
+        <reference name="product.info.media">
+            <action method="setTemplate">
+                <template>tm/easylightbox/catalog/product/view/media.phtml</template>
+            </action>
+        </reference>
+    </easylightbox_replace_image>
+</layout>

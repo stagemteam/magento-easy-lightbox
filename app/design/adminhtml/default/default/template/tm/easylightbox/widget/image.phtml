@@ -1,0 +1,50 @@
+<?php
+    $imageBaseUrl = Mage::getBaseUrl('media') . 'easylightbox/';
+?>
+
+<tr>
+    <td class="label"><label><?php echo $this->__('Image') ?></label></td>
+    <td class="value" id="file-easylightbox-wrapper">
+        <div>
+            <img id="lightbox-preview-img" src="" style="max-width: 80px;max-height:50px"/>
+        </div>
+        <input type="file" id="lightbox-image-upload" name="image"/>
+
+        <script type="text/javascript">
+        if ($("lightbox-image-upload").up("form")["parameters[path]"].value) {
+            $("lightbox-preview-img").src = "<?php echo $imageBaseUrl ?>" + $("lightbox-image-upload").up("form")["parameters[path]"].value;
+        }
+        new ss.SimpleUpload({
+            name: "image",
+            data: {
+                form_key: $("lightbox-image-upload").up("form").form_key.value,
+            },
+            button: "lightbox-image-upload",
+            url: "<?php echo $this->getUrl('adminhtml/easylightbox_image/save') ?>",
+            allowedExtensions: ["jpg", "jpeg", "png", "gif"],
+            onSubmit: function(filename, extension) {
+                $("loading-mask")
+                    .setStyle({
+                        zIndex: 1005
+                    })
+                    .show();
+                $("lightbox-image-upload").up("form")["parameters[path]"].value = "";
+            },
+            onComplete: function(filename, response) {
+                $("loading-mask").hide();
+                try {
+                    response = response.evalJSON();
+                    if (response.path) {
+                        $("lightbox-image-upload").up("form")["parameters[path]"].value = response.path;
+                        $("lightbox-preview-img").src = "<?php echo $imageBaseUrl ?>" + response.path;
+                    } else if (response.message) {
+                        alert(response.message);
+                    }
+                } catch (e) {
+                    alert(response);
+                }
+            }
+        });
+        </script>
+    </td>
+</tr>

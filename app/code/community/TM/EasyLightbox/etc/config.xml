@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <TM_EasyLightbox>
+            <version>3.2.0</version>
+        </TM_EasyLightbox>
+    </modules>
+    <global>
+        <helpers>
+            <easylightbox>
+                <class>TM_EasyLightbox_Helper</class>
+            </easylightbox>
+        </helpers>
+        <models>
+            <easylightbox>
+                <class>TM_EasyLightbox_Model</class>
+            </easylightbox>
+        </models>
+        <blocks>
+            <easylightbox>
+                <class>TM_EasyLightbox_Block</class>
+            </easylightbox>
+        </blocks>
+    </global>
+
+    <frontend>
+        <layout>
+            <updates>
+                <easylightbox module="TM_EasyLightbox">
+                    <file>tm/easylightbox.xml</file>
+                </easylightbox>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <TM_EasyLightbox>
+                    <files>
+                        <default>TM_EasyLightbox.csv</default>
+                    </files>
+                </TM_EasyLightbox>
+            </modules>
+        </translate>
+        <events>
+            <controller_action_layout_load_before>
+                <observers>
+                    <easylightbox>
+                        <class>easylightbox/observer</class>
+                        <method>applyLayoutHadles</method>
+                    </easylightbox>
+                </observers>
+            </controller_action_layout_load_before>
+        </events>
+    </frontend>
+
+    <adminhtml>
+        <translate>
+            <modules>
+                <TM_EasyLightbox>
+                    <files>
+                        <default>TM_EasyLightbox.csv</default>
+                    </files>
+                </TM_EasyLightbox>
+            </modules>
+        </translate>
+        <layout>
+            <updates>
+                <easylightbox>
+                    <file>tm/easylightbox.xml</file>
+                </easylightbox>
+            </updates>
+        </layout>
+    </adminhtml>
+
+    <admin>
+        <routers>
+             <adminhtml>
+                 <args>
+                     <modules>
+                         <easylightbox before="Mage_Adminhtml">TM_EasyLightbox_Adminhtml</easylightbox>
+                     </modules>
+                 </args>
+             </adminhtml>
+        </routers>
+    </admin>
+
+    <default>
+        <subscriptionchecker>
+            <ignored_sections>
+                <tm_easylightbox/>
+            </ignored_sections>
+        </subscriptionchecker>
+        <tm_easylightbox>
+            <general>
+                <enabled>0</enabled>
+                <jquery><![CDATA[Use "System > Configuration > Templates-Master > Core" settings to enable jQuery]]></jquery>
+                <keep_magento_zoom>0</keep_magento_zoom>
+                <lightbox_image_size>,</lightbox_image_size>
+                <main_image_size>600,600</main_image_size>
+                <thumbnail_image_size>100,100</thumbnail_image_size>
+                <use_product_name_for_title>0</use_product_name_for_title>
+                <resizeDuration>400</resizeDuration>
+                <fadeDuration>200</fadeDuration>
+                <wrapAround>1</wrapAround>
+                <fitImagesInViewport>1</fitImagesInViewport>
+                <showImageNumberLabel>1</showImageNumberLabel>
+                <albumLabel>Image %1 of %2</albumLabel>
+            </general>
+        </tm_easylightbox>
+    </default>
+</config>
