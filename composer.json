@@ -11,7 +11,7 @@
   ],
   "extra": {
     "map": [
-      ["app/code/community/TM/CatalogConfigurableSwatches/", "app/code/community/TM/CatalogConfigurableSwatches/"],
+      ["app/code/community/TM/EasyLightbox/", "app/code/community/TM/EasyLightbox/"],
 
       ["app/etc/modules/TM_EasyLightbox.xml", "app/etc/modules/TM_EasyLightbox.xml"],
 
